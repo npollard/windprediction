@@ -1,6 +1,6 @@
 print 'YEAR,MONTH,DAY,TIME,DIRECTION,WIND,NEXT_DIRECTION,NEXT_WIND'
 
-filename = 'data/KCASANTA132.raw.csv'
+filename = 'data/KCASANTA254.raw.csv'
 f = file(filename)
 data = f.read()
 rows = data.split('\n')
