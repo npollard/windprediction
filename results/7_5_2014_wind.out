@@ -1,0 +1,191 @@
+
+DATASETS:
+KCASANTA132.nom.arff
+KCASANTA154.nom.arff
+KCASANTA166.nom.arff
+
+
+MODEL: wind.xml
+	_____________________________
+	DATA: KCASANTA132.nom.arff
+	java -Xmx1500m weka.classifiers.bayes.BayesNet -o -t data/KCASANTA132.nom.arff -Q weka.classifiers.bayes.net.search.fixed.FromFile -- -B models/wind.xml -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 1.0
+
+Time taken to build model: 3.49 seconds
+Time taken to test model on training data: 2.29 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances      167969               73.8183 %
+Incorrectly Classified Instances     59575               26.1817 %
+Kappa statistic                          0.5305
+Mean absolute error                      0.0775
+Root mean squared error                  0.1968
+Relative absolute error                 69.3568 %
+Root relative squared error             83.2727 %
+Total Number of Instances           227544     
+
+
+=== Confusion Matrix ===
+
+      a      b      c      d      e      f      g      h      i      j   <-- classified as
+ 101876  21012    421      0      0      0      0      0      0      0 |      a = '(-inf-4.7]'
+  20984  57746   7350      0      3      0      0      0      0      0 |      b = '(4.7-9.4]'
+    413   6970   8328      0      7      0      0      0      0      0 |      c = '(9.4-14.1]'
+     27    316   1608      0      9      0      0      0      0      0 |      d = '(14.1-18.8]'
+      5     38    344      0     19      0      0      0      0      0 |      e = '(18.8-23.5]'
+      1      5     32      0     17      0      0      0      0      0 |      f = '(23.5-28.2]'
+      1      1      2      0      0      0      0      0      0      0 |      g = '(28.2-32.9]'
+      1      0      0      0      0      0      0      0      0      0 |      h = '(32.9-37.6]'
+      0      2      3      0      0      0      0      0      0      0 |      i = '(37.6-42.3]'
+      1      1      1      0      0      0      0      0      0      0 |      j = '(42.3-inf)'
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances      167963               73.8156 %
+Incorrectly Classified Instances     59581               26.1844 %
+Kappa statistic                          0.5305
+Mean absolute error                      0.0775
+Root mean squared error                  0.1968
+Relative absolute error                 69.3613 %
+Root relative squared error             83.2767 %
+Total Number of Instances           227544     
+
+
+=== Confusion Matrix ===
+
+      a      b      c      d      e      f      g      h      i      j   <-- classified as
+ 101876  21012    421      0      0      0      0      0      0      0 |      a = '(-inf-4.7]'
+  20985  57743   7351      1      3      0      0      0      0      0 |      b = '(4.7-9.4]'
+    413   6970   8328      0      6      1      0      0      0      0 |      c = '(9.4-14.1]'
+     27    316   1608      0      8      1      0      0      0      0 |      d = '(14.1-18.8]'
+      5     38    344      0     15      4      0      0      0      0 |      e = '(18.8-23.5]'
+      1      5     32      0     16      1      0      0      0      0 |      f = '(23.5-28.2]'
+      1      1      2      0      0      0      0      0      0      0 |      g = '(28.2-32.9]'
+      1      0      0      0      0      0      0      0      0      0 |      h = '(32.9-37.6]'
+      0      2      3      0      0      0      0      0      0      0 |      i = '(37.6-42.3]'
+      1      1      1      0      0      0      0      0      0      0 |      j = '(42.3-inf)'
+
+	_____________________________
+	DATA: KCASANTA154.nom.arff
+	java -Xmx1500m weka.classifiers.bayes.BayesNet -o -t data/KCASANTA154.nom.arff -Q weka.classifiers.bayes.net.search.fixed.FromFile -- -B models/wind.xml -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 1.0
+
+Time taken to build model: 0.13 seconds
+Time taken to test model on training data: 0.05 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         367               72.1022 %
+Incorrectly Classified Instances       142               27.8978 %
+Kappa statistic                          0.6553
+Mean absolute error                      0.0971
+Root mean squared error                  0.2109
+Relative absolute error                 59.7615 %
+Root relative squared error             74.072  %
+Total Number of Instances              509     
+
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   i   j   <-- classified as
+ 124   7   6   2   0   0   0   0   0   0 |   a = '(-inf-1.2]'
+   8  39   8   5   3   0   0   0   0   0 |   b = '(1.2-2.4]'
+   4  14  62  10   8   0   0   0   0   0 |   c = '(2.4-3.6]'
+   1   2  16  59  10   0   0   0   0   0 |   d = '(3.6-4.8]'
+   1   1   7  10  65   4   2   0   0   0 |   e = '(4.8-6]'
+   0   0   0   2   3  11   0   0   0   0 |   f = '(6-7.2]'
+   0   0   1   0   1   1   4   0   0   0 |   g = '(7.2-8.4]'
+   0   0   1   0   1   0   1   0   0   1 |   h = '(8.4-9.6]'
+   0   0   1   0   0   0   0   0   0   0 |   i = '(9.6-10.8]'
+   0   0   0   0   0   0   0   0   0   3 |   j = '(10.8-inf)'
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         363               71.3163 %
+Incorrectly Classified Instances       146               28.6837 %
+Kappa statistic                          0.6455
+Mean absolute error                      0.099 
+Root mean squared error                  0.2138
+Relative absolute error                 60.8959 %
+Root relative squared error             75.0743 %
+Total Number of Instances              509     
+
+
+=== Confusion Matrix ===
+
+   a   b   c   d   e   f   g   h   i   j   <-- classified as
+ 124   7   6   2   0   0   0   0   0   0 |   a = '(-inf-1.2]'
+   8  39   8   5   3   0   0   0   0   0 |   b = '(1.2-2.4]'
+   4  14  61  10   8   0   1   0   0   0 |   c = '(2.4-3.6]'
+   1   2  16  59  10   0   0   0   0   0 |   d = '(3.6-4.8]'
+   1   1   7  10  65   4   2   0   0   0 |   e = '(4.8-6]'
+   0   0   0   2   3  11   0   0   0   0 |   f = '(6-7.2]'
+   0   0   1   0   1   1   4   0   0   0 |   g = '(7.2-8.4]'
+   0   0   1   0   1   0   1   0   0   1 |   h = '(8.4-9.6]'
+   0   0   1   0   0   0   0   0   0   0 |   i = '(9.6-10.8]'
+   1   0   0   0   0   0   0   2   0   0 |   j = '(10.8-inf)'
+
+	_____________________________
+	DATA: KCASANTA166.nom.arff
+	java -Xmx1500m weka.classifiers.bayes.BayesNet -o -t data/KCASANTA166.nom.arff -Q weka.classifiers.bayes.net.search.fixed.FromFile -- -B models/wind.xml -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 1.0
+
+Time taken to build model: 0.11 seconds
+Time taken to test model on training data: 0.03 seconds
+
+=== Error on training data ===
+
+Correctly Classified Instances         128               64.6465 %
+Incorrectly Classified Instances        70               35.3535 %
+Kappa statistic                          0.5769
+Mean absolute error                      0.1257
+Root mean squared error                  0.2369
+Relative absolute error                 74.9805 %
+Root relative squared error             81.9501 %
+Total Number of Instances              198     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h  i  j   <-- classified as
+ 10  4  0  1  1  0  0  0  0  0 |  a = '(-inf-3.1]'
+  2 12  4  1  1  0  0  0  0  0 |  b = '(3.1-4.2]'
+  3  4 18  3  1  0  0  0  0  0 |  c = '(4.2-5.3]'
+  1  1  5 30  7  1  0  0  0  0 |  d = '(5.3-6.4]'
+  0  0  1  8 31  6  1  0  0  0 |  e = '(6.4-7.5]'
+  0  0  0  1  5 17  2  0  0  0 |  f = '(7.5-8.6]'
+  0  0  1  0  1  1  4  1  0  0 |  g = '(8.6-9.7]'
+  0  0  0  0  0  0  0  6  0  0 |  h = '(9.7-10.8]'
+  0  0  0  0  0  0  0  0  0  0 |  i = '(10.8-11.9]'
+  0  0  0  0  0  0  1  1  0  0 |  j = '(11.9-inf)'
+
+
+
+=== Stratified cross-validation ===
+
+Correctly Classified Instances         127               64.1414 %
+Incorrectly Classified Instances        71               35.8586 %
+Kappa statistic                          0.5709
+Mean absolute error                      0.1297
+Root mean squared error                  0.2433
+Relative absolute error                 77.2756 %
+Root relative squared error             84.1492 %
+Total Number of Instances              198     
+
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h  i  j   <-- classified as
+ 10  4  0  1  1  0  0  0  0  0 |  a = '(-inf-3.1]'
+  2 12  4  1  1  0  0  0  0  0 |  b = '(3.1-4.2]'
+  3  4 18  3  1  0  0  0  0  0 |  c = '(4.2-5.3]'
+  1  1  5 30  7  1  0  0  0  0 |  d = '(5.3-6.4]'
+  0  0  1  8 31  6  1  0  0  0 |  e = '(6.4-7.5]'
+  0  0  0  1  5 17  2  0  0  0 |  f = '(7.5-8.6]'
+  0  0  1  0  1  1  4  1  0  0 |  g = '(8.6-9.7]'
+  0  0  0  0  0  0  0  5  0  1 |  h = '(9.7-10.8]'
+  0  0  0  0  0  0  0  0  0  0 |  i = '(10.8-11.9]'
+  0  0  0  0  0  0  1  1  0  0 |  j = '(11.9-inf)'
+
