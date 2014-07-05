@@ -1,0 +1,89 @@
+5/27/2014:
+  - wind from 2012/2013 into test.m (as bus/gen/etc.)
+
+  - train on alternate days
+  - test vs remaining
+
+  - search for wind dataset with specific locations
+    - surfline
+      - uses wunderground
+    - power people
+    - meteorologists
+
+5/30/2014:
+- start with prediction for a single station
+  - two node BN: now/5 min from now
+- WEKA
+  - alternative to MATLAB
+  - visualization
+  - more (different) machine learning algorithms
+
+6/4/2014:
+- wunderground script
+  - grabs from 12/31/2011 to 5/31/2014 for a hardcoded station
+  - have KCASANTA132 (the wharf) and KCASANTE9 (somewhere in southern california)
+- WEKA
+  - installed, reading up on it
+  - use CSV, but convert to ARFF
+  - integrate with Java
+
+6/11/2014:
+- WEKA
+  - walkthrough
+  - according to doc, GUI works for basic usage but command line is recommended
+- recommendation for brief overview of different algorithms? neural networks, Markov, Gaussian, etc.
+- regression models
+- Adaptive Gaussian Process for Short-Term Wind Speed Forecasting
+  - NY area wind speed, Calamut, IL area wind speed
+  - 10 minute interval
+  - one year
+  - their "adaptive gaussian process" outperformed Mycielski, ARMA, 2nd order Markov chain
+- Data Mining II: Regression Analysis
+  - WEKA
+  - considered neural network, support vector machine, k-nearest neighbor
+  - sort of just a walkthrough of the WEKA GUI
+- A Decision Tree for Weather Prediction
+  - WEKA
+  - one year of pressure, humidity, temp, etc. in Hong Kong to predict temp
+  - walks through how to nominalize date, temp values
+  - used trees.SimpleCart algorithm
+- Data mining and wind power prediction: A literature review
+  - lists experiments done: what algorithm on what interval, etc.
+  - very-short term: predict seconds to 30 min ahead
+    - tested on mostly 5 or 10 minute interval datasets
+    - artificial neural networks and adaptive neuro-fuzzy inference give best results out of those surveyed
+    - however, problems listed with these studies
+  - short term: predict 30 min to 6 hours ahead
+- Short-Term Wind Power Forecasting Using Gaussian Processes
+  - one day ahead prediction
+  - Numerical Weather Prediction corrected by Gaussian Process
+  - statistical models good for 1-4 hour ahead prediction (GP)
+  - physical models good for up to dozens of hours (NWP)
+  - use physical (NWP) as input for statistical (GP) -> day ahead predictions
+- TODO:
+  - start with simple regression, predicting 5 minutes out (f(x) = ax+b)
+  - CART - decision tree into regression
+    - if the wind is NW, then a1, b1
+
+6/13/2014:
+- BNT
+  - Gaussian Bayesian Network
+- CART
+
+6/18/2014:
+- BNT is for MATLAB
+  - http://people.cs.ubc.ca/~murphyk/Software/bnsoft.html
+- TODO:
+  - look at GUI
+    - SimpleCart
+  - email data
+  - multiple stations
+  - wind direction
+  - BNT
+    - see if in WEKA
+    - http://bnt.googlecode.com/svn/trunk/docs/usage.html#cg_model
+  - use 5 minute datasets only
+  - time of day
+
+6/25/2014:
+- wind direction 5 minutes from now
