@@ -93,3 +93,8 @@
   - "No upper limit has been specified for range"
 - KCASANTA239 has numeric direction
 - KCASANTA254 has issues
+- runs out of heap space:
+  - naive_2
+  - naive_3
+  - naive_4
+  - naive_dir
