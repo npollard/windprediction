@@ -5,7 +5,7 @@ from subprocess import call
 
 data_dir = "data"
 models_dir = "models"
-model = "wind_dir_2.xml"
+model = "naive_0.xml"
 
 datasets = []
 print "\nDATASETS:"
