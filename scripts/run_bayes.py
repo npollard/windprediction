@@ -1,11 +1,18 @@
 import re
-import sys
 from os import walk
 from subprocess import call
 
 data_dir = "data"
 models_dir = "models"
-model = "naive_dir.xml"
+
+models = []
+print "MODELS:"
+for (dirpath, dirnames, filenames) in walk(models_dir):
+  for filename in filenames:
+    if re.match('.*\.xml$', filename):
+      print filename
+      models.append(filename)
+  break
 
 datasets = []
 print "\nDATASETS:"
@@ -17,13 +24,15 @@ for (dirpath, dirnames, filenames) in walk(data_dir):
   break
 print "\n"
 
-print "MODEL: " + model
+for model in models:
+  print "___________________________________________"
+  print "MODEL: " + model
 
-for data in datasets:
-  print "\t_____________________________"
-  print "\tDATA: " + data
-  command = "java -Xmx1500m weka.classifiers.bayes.BayesNet -o -t " + data_dir + "/" + data + " -Q weka.classifiers.bayes.net.search.fixed.FromFile -- -B " + models_dir + "/" + model + " -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 1.0"
-  print "\t" + command
-  sys.stdout.flush()
-  call(command, shell=True)
+  for data in datasets:
+    print "\t_____________________________"
+    print "\tDATA: " + data
+
+    command = "java -Xmx1500m weka.classifiers.bayes.BayesNet -o -t " + data_dir + "/" + data + " -Q weka.classifiers.bayes.net.search.fixed.FromFile -- -B " + models_dir + "/" + model + " -E weka.classifiers.bayes.net.estimate.SimpleEstimator -- -A 1.0"
+    print "\t" + command
+    call(command, shell=True)
 
