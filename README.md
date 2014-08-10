@@ -48,7 +48,7 @@ http://www.cs.waikato.ac.nz/ml/weka
 
   1.1 Open the preprocess script using your favorite editor.
 
-    1.1.1 vi scripts/preprocess.py
+    `vi scripts/preprocess.py`
 
   1.2 Change line 3 to the desired station.
 
