@@ -88,12 +88,12 @@ http://www.cs.waikato.ac.nz/ml/weka
 
   1.1 Open the run_bayes script using your favorite editor.
 
-    1.1.1 vi scripts/run_bayes.py
+    vi scripts/run_bayes.py
 
   1.2 Change line 8 to the desired model.
 
-      1.2.1 model = "my_model.xml"
+      model = "my_model.xml"
 
   1.3 Run the script and redirect the output to a text file.
 
-      1.3.1 python run_bayes > results/my_model.out
+      python run_bayes > results/my_model.out
