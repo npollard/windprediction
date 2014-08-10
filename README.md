@@ -16,7 +16,7 @@ wind_prediction_presentation.pdf - slides explaining the project and presenting 
 
 #### USAGE
 ##### INSTALL WEKA
-
+http://www.cs.waikato.ac.nz/ml/weka
 
 ##### GENERATE DATA
 1. Locate desired weather station on Weather Underground.
@@ -45,21 +45,55 @@ wind_prediction_presentation.pdf - slides explaining the project and presenting 
 
 ##### PREPROCESS DATA
 1. Use the preprocess script to prune and rearrange columns.
+
   1.1 Open the preprocess script using your favorite editor.
+
     1.1.1 vi scripts/preprocess.py
+
   1.2 Change line 3 to the desired station.
+
     1.2.1 station = 'data/KCASANTA162.raw.csv'
+
   1.3 Run the script, redirecting the output to a CSV file.
+
     1.3.1 python scripts/preprocess.py > data/KCASANTA162.csv
+
 2. Use the nominalize script to discretize the data. Weka's BayesNet classifier requires data to be in this form.
+
   2.1 Run the script, which will nominalize all files whose filenames are in the form [STATIONNAME].csv in the data directory. No need to modify this script.
+
     2.1.1 python scripts/nominalize.py
 
 ##### CREATE BAYESNET MODEL
+1. Open Weka.
 
+2. Open the Bayes net editor.
+
+  2.1 Tools > Bayes net editor
+
+3. Load any preprocessed dataset (of type .nom.arff) to autogenerate the network nodes.
+
+  3.1 File > Load
+
+4. Create a network by defing parent/child relationship arcs between nodes.
+
+  4.1 Edit > Add Arc, then follow prompts.
+
+5. Save the network as an XML file in the models directory.
+
+  5.1 File > Save As, and select XML BIF as the file format.
 
 ##### RUN BAYESNET CLASSIFIER
 1. Use the run_bayes script to run Weka's BayesNet classifier for a particular model for all datasets.
+
   1.1 Open the run_bayes script using your favorite editor.
+
     1.1.1 vi scripts/run_bayes.py
-  1.2 Change line 8 to the desired 
+
+  1.2 Change line 8 to the desired model.
+
+      1.2.1 model = "my_model.xml"
+
+  1.3 Run the script and redirect the output to a text file.
+
+      1.3.1 python run_bayes > results/my_model.out
