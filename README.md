@@ -20,16 +20,27 @@ wind_prediction_presentation.pdf - slides explaining the project and presenting 
 
 ##### GENERATE DATA
 1. Locate desired weather station on Weather Underground.
+
   1.1 Go to http://www.wundergound.com
+
   1.2 Use the search bar in the upper-right hand corner to search by city.
+
   1.3 Click on 'Change Station'.
+
   1.4 Browse among the stations for the area and note the station code (e.g. KCASANTA162).
+
 2. Use the wu_csv script to grab the data.
+  
   2.1 Open the wu_csv script using your favorite editor.
+ 
     2.1.1 vi scripts/wu_csv.py
+
   2.2 Change line 4 to the desired station.
+
     2.2.1 station = 'KCASANTA162'
+
   2.3 Run the script, redirecting the output in a CSV file.
+
     2.3.1 python scripts/wu_csv.py > data/KCASANTA162.raw.csv
 
 ##### PREPROCESS DATA
