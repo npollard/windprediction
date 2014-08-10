@@ -33,15 +33,15 @@ http://www.cs.waikato.ac.nz/ml/weka
   
   2.1 Open the wu_csv script using your favorite editor.
  
-    2.1.1 vi scripts/wu_csv.py
+    `vi scripts/wu_csv.py`
 
   2.2 Change line 4 to the desired station.
 
-    2.2.1 station = 'KCASANTA162'
+    `station = 'KCASANTA162'`
 
   2.3 Run the script, redirecting the output in a CSV file.
 
-    2.3.1 python scripts/wu_csv.py > data/KCASANTA162.raw.csv
+    `python scripts/wu_csv.py > data/KCASANTA162.raw.csv`
 
 ##### PREPROCESS DATA
 1. Use the preprocess script to prune and rearrange columns.
@@ -52,17 +52,17 @@ http://www.cs.waikato.ac.nz/ml/weka
 
   1.2 Change line 3 to the desired station.
 
-    1.2.1 station = 'data/KCASANTA162.raw.csv'
+    `station = 'data/KCASANTA162.raw.csv'`
 
   1.3 Run the script, redirecting the output to a CSV file.
 
-    1.3.1 python scripts/preprocess.py > data/KCASANTA162.csv
+    `python scripts/preprocess.py > data/KCASANTA162.csv`
 
 2. Use the nominalize script to discretize the data. Weka's BayesNet classifier requires data to be in this form.
 
   2.1 Run the script, which will nominalize all files whose filenames are in the form [STATIONNAME].csv in the data directory. No need to modify this script.
 
-    2.1.1 python scripts/nominalize.py
+    `python scripts/nominalize.py`
 
 ##### CREATE BAYESNET MODEL
 1. Open Weka.
@@ -88,12 +88,12 @@ http://www.cs.waikato.ac.nz/ml/weka
 
   1.1 Open the run_bayes script using your favorite editor.
 
-    vi scripts/run_bayes.py
+    `vi scripts/run_bayes.py`
 
   1.2 Change line 8 to the desired model.
 
-      model = "my_model.xml"
+      `model = "my_model.xml"`
 
   1.3 Run the script and redirect the output to a text file.
 
-      python run_bayes > results/my_model.out
+      `python run_bayes > results/my_model.out`
