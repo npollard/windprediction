@@ -92,8 +92,8 @@ http://www.cs.waikato.ac.nz/ml/weka
 
   1.2 Change line 8 to the desired model.
 
-      `model = "my_model.xml"`
+     `model = "my_model.xml"`
 
   1.3 Run the script and redirect the output to a text file.
 
-      `python run_bayes > results/my_model.out`
+     `python run_bayes > results/my_model.out`
